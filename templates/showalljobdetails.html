@@ -1,0 +1,24 @@
+{% extends "main.html" %}
+{% block content %}
+<div>
+    <a href="{{url_for('newjob')}}">
+				<button class="btn btn-default" id="new-categories">
+					<span class="glyphicon glyphicon" aria-hidden="true"></span>New job
+				</button>
+			</a>
+</div>
+	{% for job in jobs %}
+			<div class="row">
+				<div class="col-md-1"></div>
+					<div class="col-md-10 categorie-list">
+						<h3>{{job.job_name}}</h3>
+                        <a href="{{url_for('jobdetail', job_id = job.job_id)}}">
+				<button class="btn btn-default" id="new-categories">
+					<span class="glyphicon glyphicon" aria-hidden="true"></span>details
+				</button>
+			</a>
+					</div>
+				<div class="col-md-1"></div>
+			</div>
+	{% endfor %}
+{% endblock %}

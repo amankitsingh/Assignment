@@ -1,0 +1,28 @@
+{% extends "main.html" %}
+{% block content %}
+<div class = 'flash'>
+		      {% with messages = get_flashed_messages() %}
+      {% if messages %}
+
+        <ul>
+        {% for message in messages %}
+            <li> <strong> {{ message }} </strong> </li>
+        {% endfor %}
+        </ul>
+        {% endif %}
+    {% endwith %}
+    <div>
+        <a href="{{url_for('showalluserdetails')}}">
+				<button class="btn btn-default" id="new-categories">
+					<span class="glyphicon glyphicon" aria-hidden="true"></span>Users
+				</button>
+			</a>
+        <a href="{{url_for('showalljobdetails')}}">
+				<button class="btn btn-default" id="new-categories">
+					<span class="glyphicon glyphicon" aria-hidden="true"></span>Jobs
+				</button>
+			</a>
+    </div>
+
+</div>
+{% endblock %}

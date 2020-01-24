@@ -1,0 +1,36 @@
+{% extends "main.html" %}
+{% block content %}
+<div>
+    <a href="{{url_for('editjob', job_id = job.job_id)}}">
+				<button class="btn btn-default" id="new-categories">
+					<span class="glyphicon glyphicon" aria-hidden="true"></span>Edit job
+				</button>
+			</a>
+</div>
+<div>
+    <a href="{{url_for('deletejob', job_id = job.job_id)}}">
+				<button class="btn btn-default" id="new-categories">
+					<span class="glyphicon glyphicon" aria-hidden="true"></span>delete job 
+				</button>
+			</a>
+</div>
+			<div class="row">
+				<div class="col-md-1"></div>
+					<div class="col-md-10 categorie-list">
+                        <h3>{{job.job_id}}</h3>
+					    <h3>{{job.job_name}}</h3>
+					    <h3>{{job.job_contact_person}}</h3>
+					    <h3>{{job.job_contact_email}}</h3>
+					</div>
+				<div class="col-md-1"></div>
+			</div>
+	{% for jobs in jobskill %}
+                <div class="row">
+                    <div class="col-md-1"></div>
+                        <div class="col-md-10 categorie-list">
+                            <h3>{{jobs.required_skill_no}}</h3>
+                        </div>
+                    <div class="col-md-1"></div>
+                </div>
+        {% endfor %}
+{% endblock %}

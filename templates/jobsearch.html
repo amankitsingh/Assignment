@@ -1,0 +1,23 @@
+{% extends "main.html" %}
+{% block content %}
+			<div class="row">
+				<div class="col-md-1"></div>
+					<div class="col-md-10 categorie-list">
+                        <h3>{{user.user_id}}</h3>
+					    <h3>{{user.user_name}}</h3>
+					    <h3>{{user.user_phone}}</h3>
+					    <h3>{{user.user_email}}</h3>
+                        
+					</div>
+				<div class="col-md-1"></div>
+			</div>
+	{% for jobs in job %}
+                <div class="row">
+                    <div class="col-md-1"></div>
+                        <div class="col-md-10 categorie-list">
+                            <h3>{{jobs.job_name}}</h3>
+                        </div>
+                    <div class="col-md-1"></div>
+                </div>
+        {% endfor %}
+{% endblock %}

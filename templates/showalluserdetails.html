@@ -1,0 +1,24 @@
+{% extends "main.html" %}
+{% block content %}
+<div>
+    <a href="{{url_for('newuser')}}">
+				<button class="btn btn-default" id="new-categories">
+					<span class="glyphicon glyphicon" aria-hidden="true"></span>New User
+				</button>
+			</a>
+</div>
+	{% for user in users %}
+			<div class="row">
+				<div class="col-md-1"></div>
+					<div class="col-md-10 categorie-list">
+						<h3>{{user.user_name}}</h3>
+                        <a href="{{url_for('userdetail', user_id = user.user_id)}}">
+				<button class="btn btn-default" id="new-categories">
+					<span class="glyphicon glyphicon" aria-hidden="true"></span>details
+				</button>
+			</a>
+					</div>
+				<div class="col-md-1"></div>
+			</div>
+	{% endfor %}
+{% endblock %}

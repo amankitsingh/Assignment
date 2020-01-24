@@ -1,0 +1,43 @@
+{% extends "main.html" %}
+{% block content %}
+<div>
+    <a href="{{url_for('edituser', user_id = user.user_id)}}">
+				<button class="btn btn-default" id="new-categories">
+					<span class="glyphicon glyphicon-" aria-hidden="true"></span>Edit User
+				</button>
+			</a>
+</div>
+<div>
+    <a href="{{url_for('deleteuser', user_id = user.user_id)}}">
+				<button class="btn btn-default" id="new-categories">
+					<span class="glyphicon glyphicon" aria-hidden="true"></span>delete User 
+				</button>
+			</a>
+</div>
+			<div class="row">
+				<div class="col-md-1"></div>
+					<div class="col-md-10 categorie-list">
+                        <h3>{{user.user_id}}</h3>
+					    <h3>{{user.user_name}}</h3>
+					    <h3>{{user.user_phone}}</h3>
+					    <h3>{{user.user_email}}</h3>
+					</div>
+				<div class="col-md-1"></div>
+			</div>
+	{% for users in userskill %}
+                <div class="row">
+                    <div class="col-md-1"></div>
+                        <div class="col-md-10 categorie-list">
+                            <h3>{{users.skill_no}}</h3>
+                        </div>
+                    <div class="col-md-1"></div>
+                </div>
+        {% endfor %}
+<div>
+    <a href="{{url_for('jobsearchbyuser', user_id = user.user_id)}}">
+				<button class="btn btn-default" id="new-categories">
+					<span class="glyphicon glyphicon-" aria-hidden="true"></span>Job Search
+				</button>
+			</a>
+</div>
+{% endblock %}

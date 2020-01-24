@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+        <link href='http://fonts.googleapis.com/css?family=Roboto:400,300,700' rel='stylesheet' type='text/css'>
+		<link rel="stylesheet" href="//netdna.bootstrapcdn.com/bootstrap/3.1.1/css/bootstrap.min.css">
+		<link rel=stylesheet type=text/css href="{{ url_for('static', filename='styles.css') }}">
+	</head>
+	<body>
+		<div class="container">
+            <div>
+                <div>
+                    <a href="{{url_for('initialpage')}}">
+				<button class="btn btn-default" id="new-categories">
+					<span class="glyphicon glyphicon" aria-hidden="true"></span>Home
+				</button>
+			</a>
+                </div>
+                <div class = 'flash'>
+		          {% with messages = get_flashed_messages() %}
+                  {% if messages %}
+
+                    <ul>
+                    {% for message in messages %}
+                        <li> <strong> {{ message }} </strong> </li>
+                    {% endfor %}
+                    </ul>
+                        {% endif %}
+                    {% endwith %}
+            </div>
+                <aside style="display: block" >
+                    <table>
+                        <tr>
+                            <th> SKILL_ID
+                            </th>
+                            <th></th>
+                            <th> SKILL_NAME
+                            </th>
+                        </tr>
+                        {% for skill in skills %}
+			<div class="row">
+				<div class="col-md-1"></div>
+					<div class="col-md-10 categorie-list">
+						<tr><td>{{skill.skill_id}}</td>
+                            <td></td>
+						<td style="text-align:left">{{skill.skill_name}}</td></tr>
+                    {% endfor %}
+                </div>
+                    </div>
+                        </table>
+                    </aside>
+                </div>
+        
+			{% block content %}
+			{% endblock %}
+		
+        </div>
+        
+	</body>
+</html>

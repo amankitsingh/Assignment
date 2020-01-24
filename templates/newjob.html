@@ -1,0 +1,35 @@
+{% extends "main.html" %}
+{% block content %}
+	<div class="row divider green">
+		<div class="col-md-12"></div>
+	</div>
+	<div class="row banner menu">
+		<div class="col-md-11 col-md-offset-1 padding-none">
+			<h1>New job</h1>
+		</div>
+	</div>
+	<div class="row">
+		<div class="col-md-6 col-md-offset-1 padding-top">
+			<form action="#" method = "post">
+				<div class="form-group">
+                    <label for="job name">Job Name:</label>
+                    <input type ="text" class="form-control" maxlength="50" name="name">
+                    
+                    <label for="job contact person">Job Contact Person:</label>
+                    <input type ="text" class="form-control" maxlength="50" name="contact_person">
+                    
+                    <label for="job email">Job Contact Email:</label>
+                    <input type ="email" class="form-control" maxlength="50" name="email">
+                    
+                    <label for="job skill">job skill:</label>
+                    <input type ="number" class="form-control" maxlength="50" name="skill">
+                    
+                    <div class="padding-bottom"></div>
+                    <button type="submit" class="btn btn-default" id="submit" type="submit">
+                        <span class="glyphicon glyphicon" aria-hidden="true"></span>Create
+                    </button>
+                    </div>
+			</form>
+		</div>
+	</div>
+{% endblock %}

@@ -1,0 +1,36 @@
+{% extends "main.html" %}
+{% block content %}
+	<div class="row divider green">
+		<div class="col-md-12"></div>
+	</div>
+	<div class="row banner menu">
+		<div class="col-md-11 col-md-offset-1 padding-none">
+			<h1>New user</h1>
+		</div>
+	</div>
+	<div class="row">
+		<div class="col-md-6 col-md-offset-1 padding-top">
+			<form action="#" method = "post">
+				<div class="form-group">
+                    <label for="user name">user Name:</label>
+                    <input type ="text" class="form-control" maxlength="50" name="name">
+                    
+                    <label for="user contact ">user Phone Number:</label>
+                    <input type ="number" class="form-control" maxlength="50" name="phone">
+                    
+                    <label for="user email">user Email:</label>
+                    <input type ="email" class="form-control" maxlength="50" name="email">
+                    
+                    
+                     <label for="user skill">user skill:</label>
+                    <input type ="number" class="form-control" maxlength="50" name="skill">
+                    
+                    <div class="padding-bottom"></div>
+                    <button type="submit" class="btn btn-default" id="submit" type="submit">
+                        <span class="glyphicon glyphicon" aria-hidden="true"></span>Add User
+                    </button>
+                    </div>
+			</form>
+		</div>
+	</div>
+{% endblock %}
